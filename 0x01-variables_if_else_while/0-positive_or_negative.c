@@ -2,21 +2,23 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main() {
+/**
+ * main - Entry point
+ * Return: Always 0 (success)
+ */
+int main(void) {
     int n;
-    srand(time(NULL));  // Seed the random number generator
+    srand(time(0));
 
-    n = rand() % 101 - 50;  // Generate a random number between -50 and 50
-
-    printf("The number %d is ", n);
+    n = rand() - RAND_MAX / 2;
     
-    if (n > 0) {
+    if (n > 0) 
         printf("positive\n");
-    } else if (n == 0) {
+     else if (n == 0) 
         printf("zero\n");
-    } else {
+     else 
         printf("negative\n");
-    }
+    
 
     return 0;
 }
